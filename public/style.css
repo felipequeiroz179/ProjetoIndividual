@@ -14,19 +14,22 @@ body {
     margin: auto;
     display: flex;
     height: 112px;
+    align-items: center;
+    
   }
   .logo{
     margin-top: 5px;
     height: 100px; 
     width: 125px;
-    border-radius: 25px;
+  
   }
   .header {
-    background-color: #3c6ce2;
+    background-color: #3c6ce2
   }
   
   .header .container {
     justify-content: space-between;
+    
   }
   
   .header a {
@@ -42,13 +45,16 @@ body {
     justify-content: space-between;
     list-style: none;
     color: #e3b062;
+    
   }
   
   
   .titulo {
-    color: #daa520;
+    color: #febf39;
     width: fit-content;
+    font-size: 52px;
     font-weight: bolder;
+    
   }
 
   .c-loader {
@@ -67,7 +73,41 @@ body {
     width: 400px;
     height: 350px;
   }
-  
+  .c-loader h1{
+    font-size: 150px;
+    color: #febf39;
+  }
+  .banner {
+    background: linear-gradient(rgba(65, 64, 64, 0.529), rgba(0, 0, 0, 0.7)), url(./assets/img/banner.jpg);
+    width: 98.4%;
+    height: 500px;
+    align-items: center;
+    display: flex;
+    padding-left: 22px;
+  }
+
+  .banner .frase{
+    position: absolute;
+    color: #febf39;
+    font-size: 100px;
+    text-align: justify;
+  }
+  .sobre {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #febf39;
+    
+  }
+  .sobre .title {
+    font-size: 68px;
+  }
+  .sobre .text {
+    width: 50%;
+    height: flex;
+    font-size: 22px;
+  }
   
   
   
