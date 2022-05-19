@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/img/logo.jpg">
+    <title>Home - Pagina inicial</title>
+</head>
+
+<body>
+    <div class="c-loader" id="loading">
+        <img src="../assets/img/loading.gif">
+    </div>
+    <div class="corpo" id="body">
+        <div class="header">
+            <div class="container">
+                <img class="logo" src="../assets/img/logo2.png">
+                <h1 class="titulo">Garen</h1>
+                <ul class="navbar">
+                    <li>
+                        <a href="../index.html">home</a>
+                    </li>
+                    <li>
+                        <a href="#sobre">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#">$$$$$</a>
+                    </li>
+                    <li>|</li>
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                    <li>
+                        <a href="./cadastro.html">Cadastro</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            <div class="screen">
+                <div class="card">
+                    <div class="campos">
+                        <div class="wrap">
+                            Nome: <input id="nome" placeholder="Insira seu nome invocador">
+                        </div>
+                        <br>
+                        <div class="wrap">
+                            Email: <input id="email" placeholder="Insira seu email invocador">
+                        </div>
+                        <br>
+                        <div class="wrap">
+                            Senha: <input id="senha" placeholder="Insira sua senha invocador">
+                        </div>
+                        <br>
+                        <div class="wrap">
+                            Confirma senha: <input id="confSenha" placeholder="Confirme sua senha invocador">
+                        </div>
+                        <br>    
+                    </div>
+                    <div class="imagem">
+                        <h2>Cadastre-se</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    var intervalo = setInterval(function () {
+        clearInterval(intervalo);
+
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("body").style.display = "block";
+
+    }, 2000
+    );
+
+
+
+</script>
