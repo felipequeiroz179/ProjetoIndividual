@@ -84,7 +84,7 @@ body {
   .banner {
     background: linear-gradient(rgba(65, 64, 64, 0.529), rgba(0, 0, 0, 0.7)), url(./assets/img/banner.jpg);
     width: 98.4%;
-    height: 550px;
+    height: 90vh;
     padding-top: 33px;
     align-items: center;
     display: flex;
@@ -113,6 +113,7 @@ body {
     height: flex;
     font-size: 17px;
     color: black;
+    font-family: 'Bangers', cursive ;
   }
 
   .tudo {

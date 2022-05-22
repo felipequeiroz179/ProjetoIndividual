@@ -89,7 +89,7 @@ body {
   }
   
   .card {
-    width: 900px;
+    width: 500px;
     height: 420px;
     border-radius: 25px;
     background-color: white;
@@ -106,7 +106,7 @@ body {
   }
 
   .card .campos {
-    width: 50%;
+    width: 100%;
     height: 100%;
     border-radius: 25px;
     display: flex;
@@ -114,30 +114,6 @@ body {
     margin-top: 20px;
     justify-content: center;
     flex-direction: column;
-  }
-  
-  .card .imagem {
-    width: 50%;
-    height: 100%;
-    
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    background: linear-gradient(rgba(65, 64, 64, 0.529), rgba(0, 0, 0, 0.7)), url(../assets/img/cadastro.jpg);
-  }
-
-  .imagem h2{
-    font-size: 77px;
-    color: #febf39;
-    cursor: pointer;
-  }
-
-  .imagem h2:hover{
-    font-size: 90px;
-    transition: 0.5s ease;
-    cursor: pointer;
   }
 
   .wrap {
@@ -173,15 +149,15 @@ body {
   .wrap.btn {
     display: flex;
     flex-direction: row;
-    height: 35vh;
+    height: 20%;
     justify-content: space-between;
     align-items: center;
-    width: 60%;
+    width: 55%;
     margin-left: 12px;
 }
 
 .wrap.btn button{
-  height: 45%;
+  height: 40%;
   width: 45%;
   background-color: transparent;
   border: 3px solid #e3b062;
