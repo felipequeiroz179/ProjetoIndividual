@@ -24,6 +24,12 @@ body {
     width: 125px;
   
   }
+
+  .logo:hover{
+    animation: virar 2s linear;
+    cursor: pointer;
+  }
+
   .header {
     background-color: #3c6ce2;
     position: fixed;
@@ -103,6 +109,8 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #febf39;
+    width: 100%;
+    height: 90vh;
     
   }
   .sobre .title {
@@ -132,6 +140,92 @@ body {
     width: 700px;
     height: 500px;
     background-color: white;
+  }
+
+  .valores {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    width: 100%;
+    height: 90vh;
+  }
+
+  .valores .cards{
+    display: flex;
+    width: 90%;
+    height: 45%;
+    font-size: 17px;
+    font-family: 'Bangers', cursive ;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+  }
+
+  .valores .title {
+    font-size: 48px;
+    color: #febf39;
+  }
+
+  .valores .cards .card{
+    display: flex;
+    height: 90%;
+    background-color: #febf39;
+    border-radius: 25px;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    box-shadow: 5px 5px 40px black  ;
+  }
+
+  .valores .cards .card:hover {
+    transition: 0.5s;
+    box-shadow: 5px 5px 40px #c5c5c5;
+  }
+
+
+
+  .cards .card .text{
+    font-size: 25px;
+  }
+  .cards .card .text:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.5); 
+    -webkit-text-stroke: 1.5px #666666; 
+    transition-timing-function: ease-in-out;
+  }
+  #comentario {
+    position:relative; 
+    top:-80px;
+    left:170px;
+    padding:2px;
+    line-height:20px;
+    color:#fff;
+    display: block;
+    width:120px;
+    opacity: 0;
+   
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+   }
+   
+   .card:hover  #comentario{
+         opacity: 1;
+   }
+
+  @keyframes virar {
+    to {
+      transform: rotate(350deg);
+    }
+    from {
+      transform: rotate(0);
+    }
   }
   
   
