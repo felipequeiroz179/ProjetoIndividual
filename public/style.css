@@ -10,6 +10,8 @@ body {
     font-family: 'Bangers', cursive;
     background-color: #febf39;
   }
+  
+
   .container {
     width: 80%;
     margin: auto;
@@ -89,7 +91,7 @@ body {
   }
   .banner {
     background: linear-gradient(rgba(65, 64, 64, 0.529), rgba(0, 0, 0, 0.7)), url(./assets/img/banner.jpg);
-    width: 98.4%;
+    width: 100%;
     height: 90vh;
     padding-top: 33px;
     align-items: center;
@@ -238,7 +240,58 @@ body {
       align-items: center;
       width: 100%;
       height: 20vh;
-      background: linear-gradient(72deg, #3debb0 1%, #8956f3 99% );
+      background: linear-gradient(72deg, #e3b062 1%, #febf39 99% );
+  }
+
+  *{
+    box-sizing: border-box;
+  }
+
+  .skins {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(72deg, #3c6ce2 1%, #febf39 99% );
+    width: 100%;
+    height: 90vh;
+  }
+  .skins .title {
+    font-size: 48px;
+    color: #333;
+  }
+
+  .skins .carrosel {
+    box-shadow: 2px 2px 4px black;
+    overflow: hidden;
+    height: 400px;
+    width: 670px;
+    overflow-x: auto;
+  }
+  .skins .carrosel::-webkit-scrollbar {
+    width: 12px;             
+  }
+  
+  .skins .carrosel::-webkit-scrollbar-track {
+    background: orange;        
+  }
+  
+  .skins .carrosel::-webkit-scrollbar-thumb {
+    background-color: blue;    
+    border-radius: 20px;       
+    border: 3px solid orange; 
+  }
+
+  .items {
+    display: flex;
+    transition: trasform 0.5s ease-in-out;
+    transform: translateX(0);
+  }
+
+  .items img{
+    object-fit: cover;
+    height: 400px;
+    width: 670px;
   }
   
   
