@@ -9,8 +9,8 @@ var PORTA = 3333;
 var app = express();
 
 var indexRouter = require("./src/routes/index");
-var empresaRouter = require("./src/routes/empresas");
-var avisosRouter = require("./src/routes/avisos");
+var usuarioRouter = require("./src/routes/usuario");
+var avisosRouter = require("./src/routes/aviso");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -19,8 +19,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/", indexRouter);
-app.use("/empresas", empresaRouter);
-app.use("/avisos", avisosRouter);
+app.use("/usuario", usuarioRouter);
+app.use("/aviso", avisosRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n

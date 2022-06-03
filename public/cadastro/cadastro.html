@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="../funcoes.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
@@ -40,6 +41,11 @@
                 </ul>
             </div>
         </div>
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
             <div class="screen">
                 <div class="card">
                     <div class="campos">
@@ -63,7 +69,14 @@
                             <button onclick="voltar()">Voltar</button>
                             <button onclick="cadastrar()">Cadastrar</button>
                         </div>
-                        <br>    
+                        <br> 
+                        <div id="div_aguardar" class="loading-div">
+                            <img src="../assets/aguarde-orange.gif" id="loading-gif">
+                        </div>
+        
+                        <div id="div_erros_login">
+        
+                        </div>   
                     </div>
                     <div class="imagem">
                         <h2>Cadastre-se</h2>
@@ -87,5 +100,70 @@
     );
 
 
+
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome.value;
+        var emailVar = email.value;
+        var senhaVar = senha.value;
+        var confirmacaoSenhaVar = confSenha.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Não deixe nenhum campo do cadastro em branco";
+            
+            setInterval(sumirMensagem, 5000)
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuario/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "../login/login.html";
+                }, "3000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
 
 </script>
