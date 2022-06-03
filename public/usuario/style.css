@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Heebo&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bangers', cursive;
+    background-color: #febf39;
+  }
+
 .janela {
     display: flex;
     width: 100vw;
@@ -34,8 +44,29 @@
     left: 25%;
   }
   
-  .header-left h1 {
-    color: #32b9cd;
+  .header-left img {
+
+    height: 150px ;
+    width: 150px ;
+    border-radius: 80px;
+    
+  }
+
+  .header-left img:hover {
+
+    animation: rotacao 2s linear;
+    
+  }
+
+
+
+  @keyframes rotacao {
+    to {
+      transform: rotatey(360deg);
+    }
+    from {
+      transform: rotatey(0);
+    }
   }
   
   .hello {
@@ -51,32 +82,26 @@
   }
   
   .hello h3 span {
-    font-weight: 800;
+    font-weight: bolder;
+    color: #febf39;
   }
   
   .btn-nav {
     width: 40%;
-    color: white;
-    background-color: #e6005a;
+    color: #febf39;
+    background-color: #161618;
     border-radius: 5px;
     text-align: center;
     padding: 2% 5%;
+    cursor: pointer;
+  }
+
+  .btn-nav:hover {
+    color: #161618;
+    background-color:#febf39 ;
+    transition: 300ms;
   }
   
-  .btn-nav-white {
-    width: 40%;
-    background-color: white;
-    border: 3px solid #e6005a;
-    border-radius: 5px;
-    text-align: center;
-    padding: 2% 5%;
-  }
-  
-  .btn-nav-white h3 {
-    color: #e6005a;
-    padding: 0;
-    margin: 0;
-  }
   
   .btn-nav h3,
   .btn-logout h3 {
@@ -88,8 +113,8 @@
     margin: 0;
     padding: 0;
     width: 20%;
-    background-color: #32b9cd;
-    color: white;
+    background-color: #161618;
+    color: #32b9cd;
     border-radius: 10px;
     text-align: center;
     padding: 10px 15px;
