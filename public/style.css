@@ -28,7 +28,7 @@ body {
   }
 
   .logo:hover{
-    animation: virar 2s linear;
+    animation: virar 2s infinite;
     cursor: pointer;
   }
 
@@ -161,7 +161,7 @@ body {
   .valores .cards{
     display: flex;
     width: 90%;
-    height: 45%;
+    height: 40%;
     font-size: 17px;
     font-family: 'Bangers', cursive ;
     flex-wrap: nowrap;
@@ -227,7 +227,7 @@ body {
 
   @keyframes virar {
     to {
-      transform: rotate(350deg);
+      transform: rotate(360deg);
     }
     from {
       transform: rotate(0);
