@@ -23,7 +23,7 @@
     <div class="janela">
 
         <div class="header-left">
-            <img src="../assets/icon/iconUser2.webp">
+            <img id="icone" src="">
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -89,7 +89,7 @@
 <script>
     
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
+    icone.src = sessionStorage.IMAGEM_USUARIO;
     
 
     function editar(idAviso) {

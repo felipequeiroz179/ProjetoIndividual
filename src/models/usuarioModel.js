@@ -27,6 +27,7 @@ function entrar(email, senha) {
 function cadastrar(
   nome,
   email,
+  icone,
   senha
 ) {
   console.log(
@@ -34,8 +35,8 @@ function cadastrar(
   );
 
   var instrucao1 = `
-        INSERT INTO usuario (nome, email, senha) VALUES
-        ('${nome}', '${email}', '${senha}');
+        INSERT INTO usuario (nome, email, senha, imagem) VALUES
+        ('${nome}', '${email}', '${senha}', '${icone}');
     `;
   console.log("Executando a instrução SQL: \n" + instrucao1);
   return database.executar(instrucao1);

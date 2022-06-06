@@ -4,12 +4,15 @@ function validarSessao() {
 
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
+    var icone = sessionStorage.IMAGEM_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
+    var icone_img = document.getElementById("icone");
 
     if (email != null && nome != null) {
         // window.alert(`Seja bem-vindo, ${nome}!`);
         b_usuario.innerHTML = nome;
+        icone_img.src = icone;
 
         // finalizarAguardar();
     } else {

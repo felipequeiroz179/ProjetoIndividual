@@ -59,6 +59,10 @@
                         </div>
                         <br>
                         <div class="wrap">
+                            Url do icone:  <input id="icone" type="text" placeholder="Coloque seu Incone">
+                        </div>
+                        <br>
+                        <div class="wrap">
                             Senha:  <input id="senha" type="password" placeholder="  Insira sua senha">
                         </div>
                         <br>
@@ -108,10 +112,11 @@
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome.value;
         var emailVar = email.value;
+        var iconeVar = icone.value;        
         var senhaVar = senha.value;
         var confirmacaoSenhaVar = confSenha.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || iconeVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Não deixe nenhum campo do cadastro em branco";
             
@@ -134,6 +139,7 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
+                iconeServer: iconeVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
