@@ -19,6 +19,21 @@ function listar(req, res) {
     });
 }
 
+function contar(req, res) {
+    avisoModel.contar().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar a quantidade de avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+
 function listarPorUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
 
@@ -138,5 +153,6 @@ module.exports = {
     pesquisarDescricao,
     publicar,
     editar,
-    deletar
+    deletar,
+    contar
 }
