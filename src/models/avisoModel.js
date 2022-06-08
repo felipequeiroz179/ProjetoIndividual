@@ -23,7 +23,7 @@ function listar() {
 function contar() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function contar()");
     var instrucao = `
-        SELECT count(id) FROM aviso;
+        SELECT count(id) as QtdAvisos FROM aviso;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

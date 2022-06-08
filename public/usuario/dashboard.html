@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario - Pagina do usuario</title>
+    
+
+    <script src="../funcoes.js"></script>
+
+    <link rel="stylesheet" href="./style2.css">
+    
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+</head>
+
+<body onload="validarSessao(), obterDados(), obterDados2()">
+
+    <div class="janela">
+        <div class="header-left">
+            <img id="icone" src="">
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav">
+                <h3>Home</h3>
+            </div>
+
+            <div class="btn-nav">
+            <a href="./areaUsuario.html">
+                <h3>Chat Geral</h3>
+            </a>
+            </div>
+
+
+            <div class="btn-nav">
+               <a href="../mural/mural.html" >
+                    <h3>Meus Comentários</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash-right">
+
+           
+                <div class="graph">
+                    <canvas width="200" height="200" id="canvas_grafico"></canvas>
+
+                    <canvas width="200" height="200" id="canvas_grafico2"></canvas>
+                </div>
+
+        </div>
+
+        <div class="cards">
+            <h1>Quantidades</h1>
+            <div class="card"  id="div_qtdAvisos">
+             
+            </div>
+            <div class="card" id="div_qtdUsuarios">
+
+            </div>
+        </div>
+
+       
+
+      
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    icone.src = sessionStorage.IMAGEM_USUARIO;
+
+    verificar_autenticacao();
+
+
+    function obterDados() {
+    fetch(`/aviso/contar`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                plotar(resposta);
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+}
+
+function obterDados2() {
+    fetch(`/usuario/contar`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                
+                plotar2(resposta);
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+}
+
+
+
+function plotar(resposta) {
+    console.log('iniciando plotagem...');
+
+        var dados = {
+            QtdAvisos: []
+         
+        }
+
+        for(var i = 0; i < resposta.length; i++){
+            var registro = resposta[i];
+            dados.QtdAvisos.push(registro.QtdAvisos)
+
+         
+        }
+       
+        div_qtdAvisos.innerHTML += `
+        
+    ${dados.QtdAvisos}
+               
+        `; 
+
+    const ctx = document.getElementById('canvas_grafico').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Avisos'],
+            datasets: [{
+                label: 'Quantidade de Avisos',
+                data: [dados.QtdAvisos],
+                backgroundColor: [
+                    '#febf39'
+                    
+                ],
+                borderColor: [
+                    'white'
+                    
+                ],
+                borderWidth: 1
+            },
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        max: 50,
+                        min: 0
+                    }
+                }],
+            }
+        }
+    });
+    
+}
+
+function plotar2(resposta) {
+    console.log('iniciando plotagem...');
+
+        var dados = {
+            QtdUsuarios: []
+         
+        }
+
+        for(var i = 0; i < resposta.length; i++){
+            var registro = resposta[i];
+            dados.QtdUsuarios.push(registro.QtdUsuarios)
+
+         
+        }
+       
+        div_qtdUsuarios.innerHTML += `
+        
+            ${dados.QtdUsuarios}
+               
+        `; 
+
+    const ctx = document.getElementById('canvas_grafico2').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Usuarios'],
+            datasets: [{
+                label: 'Quantidade de Usuarios',
+                data: [dados.QtdUsuarios],
+                backgroundColor: [
+                    '#32b9cd'
+                    
+                ],
+                borderColor: [
+                    'white'
+                    
+                ],
+                borderWidth: 1
+            },
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        max: 50,
+                        min: 0
+                    }
+                }],
+            }
+        }
+    });
+    
+}
+
+</script>

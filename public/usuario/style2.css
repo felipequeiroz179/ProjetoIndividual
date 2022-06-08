@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bangers', cursive;
+    background-color: #161618;
+    height: 100%;
+  }
+  html {
+    height: 100%;
+  }
+
+.janela {
+    display: flex;
+    width: flex;
+    height: 100%;
+    justify-content: space-between;
+    
+    font-family: "Exo 2", sans-serif;
+  }
+  
+  .header-left a {
+    text-decoration: none;
+    color:#32b9cd;
+  }
+  
+  .header-left {
+    font-family: 'Bangers', cursive;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 3px solid #32b9cd;
+    background-color: #212124;
+    /* border: 3px solid pink; */
+  }
+  
+  .dash-right {
+    display: flex;
+    width: 75%;
+    height: fit-content;
+    background-color: #161618;
+    position: relative;
+    top: 0;
+    left: 25%;
+  }
+  
+  .header-left img {
+
+    height: 150px ;
+    width: 150px ;
+    border-radius: 80px;
+    
+  }
+
+  .header-left img:hover {
+
+    animation: rotacao 2s linear;
+    
+  }
+
+
+
+  @keyframes rotacao {
+    to {
+      transform: rotatey(360deg);
+    }
+    from {
+      transform: rotatey(0);
+    }
+  }
+  
+  .hello {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hello h3 {
+    color: #e3b062;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  
+  .hello h3 span {
+    font-weight: bolder;
+    color: #febf39;
+  }
+  
+  .btn-nav {
+    width: 40%;
+    color: #febf39;
+    background-color: #161618;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2% 5%;
+    cursor: pointer;
+  }
+
+  .btn-nav:hover {
+    color: #161618;
+    background-color:#febf39 ;
+    transition: 300ms;
+  }
+  
+  
+  .btn-nav h3,
+  .btn-logout h3 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .btn-logout {
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #161618;
+    color: #32b9cd;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 15px;
+    margin-bottom: 100px;
+    cursor: pointer;
+  }
+
+  
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Heebo&display=swap');
+.dash-right .avisos {
+    width: 90%;
+    /* border: 3px solid pink; */
+    color: rgb(216, 216, 216);
+    font-family: "Exo 2", sans-serif;
+  }
+  
+  .dash-right .avisos .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dash-right .avisos .container .div-form {
+    width: 100%;
+  }
+  
+  .dash-right .avisos .container .div-form #form_postagem {
+    width: 99%;
+  }
+  
+  .dash-right .avisos .div-form label {
+    width: 100%;
+  }
+  
+  .dash-right .avisos .div-form input {
+    width: 90%;
+    height: 40px;
+    border-radius: 40px;
+    border: 3px solid #32b9cd;
+  }
+  
+  
+  .dash-right .avisos .div-form button {
+    cursor: pointer;
+    font-family: "Exo 2", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #32b9cd;
+    width: 60px;
+    height: 55px;
+    border-radius: 100px;
+  }
+  
+  .publicacao-btn-editar {
+    cursor: pointer;
+    font-family: "Exo 2", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px 8px;
+    color: white;
+    background-color: #32b9cd;
+    width: 80px;
+  }
+  
+  .publicacao {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    background-color: #febf39;
+    color: black;
+    border-bottom: 3px solid #32b9cd;
+    padding: 20px;
+    margin-bottom: 5%;
+  }
+  
+  .publicacao > *:not(:last-child) {
+    padding: 0 0 10px 0;
+  }
+  
+  .div-results {
+    width: 100%;
+  }
+  
+  .div-results .feed-container {
+    border-radius: 5px;
+    margin-bottom: 80px;
+  }
+  
+  .div-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .div-buttons > * {
+    margin-left: 30px;
+  }
+
+  .graph {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dash-right {
+    display: block;
+    width: 30%;
+    background-color: #32b9cd;
+    border-radius: 25px;
+  }
+  .card{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+
+  .card:hover{
+    cursor: pointer;
+    background-color:  #32b9cd;
+    color: #febf39;
+  }
+
+  .cards  {
+    display: flex;
+    height: 30%;
+    width: 35%;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #e3b062;
+    border-radius: 50px;
+    margin-right: 25px;
+  }
