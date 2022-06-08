@@ -54,7 +54,7 @@
                 <div class="container">
                     
                     <h1>Comentários</h1>
-                    <div class="div-results">
+                    <div class="div-results" id="comentário">
                         <div id="feed_container" class="feed-container">
                         </div>
                     </div>
@@ -122,7 +122,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.location.reload()
+                atualizarFeed();
                 limparFormulario();
                 finalizarAguardar();
             } else if (resposta.status == 404) {

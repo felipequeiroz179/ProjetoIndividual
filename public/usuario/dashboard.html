@@ -63,10 +63,10 @@
         <div class="cards">
             <h1>Quantidades</h1>
             <div class="card"  id="div_qtdAvisos">
-             
+                <span class="tooltiptext">Comentários</span>
             </div>
             <div class="card" id="div_qtdUsuarios">
-
+                <span class="tooltiptext">Usuarios</span>
             </div>
         </div>
 
@@ -150,9 +150,9 @@ function plotar(resposta) {
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Avisos'],
+            labels: ['Comentários'],
             datasets: [{
-                label: 'Quantidade de Avisos',
+                label: 'Quantidade de Comentários',
                 data: [dados.QtdAvisos],
                 backgroundColor: [
                     '#febf39'
