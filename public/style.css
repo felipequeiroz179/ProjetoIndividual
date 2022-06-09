@@ -10,6 +10,10 @@ body {
     font-family: 'Bangers', cursive;
     background-color: #febf39;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
   
 
   .container {
