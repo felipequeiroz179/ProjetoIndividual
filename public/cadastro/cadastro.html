@@ -123,6 +123,23 @@
             setInterval(sumirMensagem, 5000)
             finalizarAguardar();
             return false;
+        } else if (emailVar.indexOf("@") == -1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Coloque o arroba no email";
+
+            setInterval(sumirMensagem, 5000)
+            finalizarAguardar();
+            return false;
+                
+            return false;
+        } else if (senhaVar != confirmacaoSenhaVar) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML =  "As senhas inseridas devem ser iguais para prosseguir!";
+
+            
+            setInterval(sumirMensagem, 5000)
+            finalizarAguardar();
+            return false;
         }
         else {
             setInterval(sumirMensagem, 5000)
